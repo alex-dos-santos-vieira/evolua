@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Evolua</title>
+<meta name="description" content="Treino, dieta, medidas e diagnóstico em um app para o celular.">
+<meta name="theme-color" content="#0E6B5C" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101614" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Evolua">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header class="top">
+  <button id="voltar" class="icon-btn" type="button" aria-label="Voltar" hidden></button>
+  <h1 id="titulo">Evolua</h1>
+  <div id="top-acao"></div>
+</header>
+
+<main id="main" tabindex="-1"></main>
+
+<button id="descanso-pill" class="pill" type="button" hidden></button>
+
+<nav class="tabs" aria-label="Seções">
+  <a href="#/hoje" data-tab="hoje"><span class="ti" data-ic="hoje"></span><span>Hoje</span></a>
+  <a href="#/treino" data-tab="treino"><span class="ti" data-ic="treino"></span><span>Treino</span></a>
+  <a href="#/dieta" data-tab="dieta"><span class="ti" data-ic="dieta"></span><span>Dieta</span></a>
+  <a href="#/medidas" data-tab="medidas"><span class="ti" data-ic="medidas"></span><span>Medidas</span></a>
+  <a href="#/mais" data-tab="mais"><span class="ti" data-ic="mais"></span><span>Mais</span></a>
+</nav>
+
+<div id="timer" class="timer" hidden role="dialog" aria-label="Descanso">
+  <div class="timer-in">
+    <p class="timer-lbl" id="timer-lbl">Descanso</p>
+    <div class="timer-dial">
+      <svg viewBox="0 0 220 220" aria-hidden="true"><circle cx="110" cy="110" r="96" class="td-bg"/><circle cx="110" cy="110" r="96" class="td-fg" id="timer-arc" transform="rotate(-90 110 110)"/></svg>
+      <div class="timer-num" id="timer-num">0:00</div>
+    </div>
+    <p class="timer-next" id="timer-next"></p>
+    <div class="timer-btns">
+      <button type="button" class="btn ghost" id="timer-menos">−15 s</button>
+      <button type="button" class="btn ghost" id="timer-mais">+15 s</button>
+    </div>
+    <div class="timer-btns">
+      <button type="button" class="btn ghost" id="timer-min">Minimizar</button>
+      <button type="button" class="btn" id="timer-pular">Pular descanso</button>
+    </div>
+  </div>
+</div>
+
+<div id="sheet-bg" class="sheet-bg" hidden><div id="sheet" class="sheet" role="dialog" aria-modal="true"></div></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="js/db.js"></script>
+<script src="js/calc.js"></script>
+<script src="js/foods.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
